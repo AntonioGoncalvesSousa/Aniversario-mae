@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Great+Vibes);
+@import url(https://fonts.googleapis.com/css?family=Muli);
+
+:root {
+    /* CORES */
+    --cor-silver: #C0C0C0;
+    --cor-blue: #2F5D7E;
+    --cor-white: #F8F9FA;
+    --cor-gray: #3E3E3E;
+
+    /* FONTES */
+    --font-title: 'Great Vibes', cursive;
+    --font-text: 'Muli', sans-serif;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: var(--cor-blue);
+    font-family: var(--font-title);
+}
+
+.blue {
+    color: var(--cor-blue);
+}
+
+.fonte-titulo {
+    font-family: var(--font-title);
+}
+
+.fonte-texto {
+    font-family: var(--font-text);
+}
+
+.navbar {
+    background-color: var(--cor-blue);
+    color: var(--cor-white);
+    padding: 20px 35px 20px 35px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+}
+
+.hero-text {
+    width: 100%;
+    text-align: center;
+    padding: 40px 35px 20px 35px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-img {
+    width: 100%;
+    /* background-color: var(--cor-blue); */
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.quadro {
+    width: 93%;
+    background-color: var(--cor-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.quadro img {
+    width: 95%;
+    object-fit: cover;
+    height: 95%;
+}

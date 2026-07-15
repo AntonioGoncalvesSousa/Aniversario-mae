@@ -64,15 +64,15 @@
         </div>
     </section>
     <section party-info>
-        <div class="line-fix">
+        <div class="line-fix margin-30">
             <div class="line"></div>
         </div>
         <div class="container gap-10">
             <h2 class="fonte-titulo">Informações sobre a Festa</h2>
 
             <iframe src="https://www.google.com/maps?q=Rua+Carlos+Weber+1272&output=embed" 
-                width="350" 
                 height="350" 
+                width="100%"
                 style="border:0;"
                 loading="lazy" 
                 allowfullscreen>
@@ -89,6 +89,75 @@
         </div> 
 
     </section>
+    <section gift-list>
+        <div class="line-fix margin-30">
+            <div class="line"></div>
+        </div>
+        <div class="container gap-10">
+            <h2 class="fonte-titulo">Lista de Presentes</h2>
+            <div id="gift-cards" class="gift-cards"></div>
+        </div>
+    </section>
+    <section attendance-confirmation>
+        <div class="line-fix margin-30">
+            <div class="line"></div>
+        </div>
+        <div class="container gap-10">
+            <h2 class="fonte-titulo">Confirmação de Presença</h2>
+            <p class="form-description">Por favor, confirme sua presença até o dia 15 de setembro.</p>
+
+            <form class="attendance-form" id="attendance-form">
+                <div class="form-group">
+                    <label for="full-name">Nome Completo <span class="required">*</span></label>
+                    <input type="text" id="full-name" name="fullName" placeholder="Digite seu nome completo" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Você irá comparecer à festa? <span class="required">*</span></label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" class="check-width" name="attendance" value="yes" required>
+                            Sim, estarei presente.
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" class="check-width" name="attendance" value="no">
+                            Não poderei comparecer.
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group conditional-block" id="companions-question" hidden>
+                    <label>Você levará acompanhantes?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" class="check-width" name="companions" value="yes">
+                            Sim
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" class="check-width" name="companions" value="no">
+                            Não
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group conditional-block" id="companions-field" hidden>
+                    <label for="companions">Nome dos acompanhantes</label>
+                    <textarea id="companions" name="companions" rows="4" placeholder="Ex.: Maria Silva, Pedro Silva e Ana Souza"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Deixe uma mensagem para a aniversariante (opcional)</label>
+                    <textarea id="message" name="message" rows="4" placeholder="Escreva uma mensagem carinhosa para a Maria Sueli..."></textarea>
+                </div>
+
+                <button type="submit" class="submit-button">Confirmar Presença</button>
+                <p class="form-success" id="form-success" hidden>Sua confirmação foi enviada com sucesso!</p>
+            </form>
+        </div>
+    </section>
+
+    <script src="./js/gifts.js"></script>
+    <script src="./js/attendance.js"></script>
 </body>
 
 </html>

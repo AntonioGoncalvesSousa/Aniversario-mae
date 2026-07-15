@@ -112,21 +112,152 @@ h1 {
     background-color: var(--cor-gray);
 }
 
-.map-link {
-    display: inline-block;
-    margin: 20px 0;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.map-image {
-    width: 400px;
-    height: 400px;
-    display: block;
-    object-fit: cover;
-}
-
 .gap-10 {
     gap: 10px;
+}
+
+.gift-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.gift-card {
+    background-color: var(--cor-white);
+    border: 1px solid rgba(62, 62, 62, 0.15);
+    border-radius: 16px;
+    padding: 20px 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 220px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gift-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+}
+
+.gift-emoji {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.gift-card h3 {
+    font-family: var(--font-text);
+    color: var(--cor-blue);
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.gift-price {
+    font-family: var(--font-text);
+    color: var(--cor-gray);
+    font-weight: 700;
+    margin: 0;
+}
+
+.margin-30 {
+    margin: 30px 0;
+}
+
+.form-description {
+    font-family: var(--font-text);
+    color: var(--cor-gray);
+    margin-bottom: 20px;
+}
+
+.attendance-form {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    background-color: var(--cor-white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: left;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    font-family: var(--font-text);
+    color: var(--cor-gray);
+    font-weight: 700;
+}
+
+.required {
+    color: #c0392b;
+}
+
+.attendance-form input,
+.attendance-form textarea {
+    border: 1px solid rgba(62, 62, 62, 0.25);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: var(--font-text);
+    font-size: 1rem;
+    color: var(--cor-gray);
+    background-color: #fff;
+}
+
+.attendance-form input:focus,
+.attendance-form textarea:focus {
+    outline: none;
+    border-color: var(--cor-blue);
+    box-shadow: 0 0 0 2px rgba(47, 93, 126, 0.15);
+}
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.radio-option {
+    font-family: var(--font-text);
+    color: var(--cor-gray);
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.submit-button {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 16px;
+    background-color: var(--cor-blue);
+    color: var(--cor-white);
+    font-family: var(--font-text);
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #244a63;
+}
+
+.form-success {
+    margin-top: 14px;
+    font-family: var(--font-text);
+    color: var(--cor-blue);
+    font-weight: 700;
+}
+
+.check-width {
+    width: 40px;
 }

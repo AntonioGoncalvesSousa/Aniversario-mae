@@ -41,7 +41,7 @@ h1 {
 .navbar {
     background-color: var(--cor-blue);
     color: var(--cor-white);
-    padding: 20px 35px 20px 35px;
+    padding: 20px 35px;
     justify-content: space-between;
     display: flex;
     align-items: center;
@@ -83,4 +83,50 @@ h1 {
     width: 95%;
     object-fit: cover;
     height: 95%;
+}
+
+.container {
+    width: 100%;
+    padding: 20px 35px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-img-text {
+    width: 100%;
+    /* background-color: var(--cor-blue); */
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+.line-fix {
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+.line {
+    width: 85%;
+    height: 1px;
+    background-color: var(--cor-gray);
+}
+
+.map-link {
+    display: inline-block;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.map-image {
+    width: 400px;
+    height: 400px;
+    display: block;
+    object-fit: cover;
+}
+
+.gap-10 {
+    gap: 10px;
 }

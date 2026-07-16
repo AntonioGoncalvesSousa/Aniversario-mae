@@ -48,6 +48,10 @@ modal.innerHTML = `
     <h3>Enviar presente</h3>
     <p>Digite o nome da pessoa para confirmar o presente.</p>
     <input type="text" id="gift-recipient-name" placeholder="Seu nome" />
+    <div id="gift-amount-group" class="gift-amount-group" hidden>
+      <label for="gift-amount">Quanto você quer mandar?</label>
+      <input type="number" id="gift-amount" min="1" step="0.01" placeholder="Ex.: 50" />
+    </div>
     <button type="button" id="gift-submit-button">Enviar presente</button>
     <button type="button" id="gift-close-button" class="gift-close-button">Cancelar</button>
   </div>
@@ -60,12 +64,23 @@ let currentGiftTitle = '';
 function openGiftModal(giftTitle) {
   currentGiftTitle = giftTitle;
   modal.classList.remove('hidden');
+
+  const amountGroup = document.getElementById('gift-amount-group');
+  const amountInput = document.getElementById('gift-amount');
+  const isContribution = giftTitle === 'Contribuição livre';
+
+  amountGroup.hidden = !isContribution;
+  if (!isContribution) {
+    amountInput.value = '';
+  }
+
   document.getElementById('gift-recipient-name').focus();
 }
 
 function closeGiftModal() {
   modal.classList.add('hidden');
   document.getElementById('gift-recipient-name').value = '';
+  document.getElementById('gift-amount').value = '';
 }
 
 document.addEventListener('click', async (event) => {
@@ -86,7 +101,17 @@ document.addEventListener('click', async (event) => {
     }
 
     const selectedGift = giftsData.gifts.find((gift) => gift.title === currentGiftTitle);
-    const priceValue = selectedGift ? selectedGift.price.toFixed(2) : '0.00';
+    let priceValue = selectedGift ? selectedGift.price.toFixed(2) : '0.00';
+
+    if (currentGiftTitle === 'Contribuição livre') {
+      const customAmount = document.getElementById('gift-amount').value.trim();
+      if (!customAmount) {
+        alert('Por favor, informe o valor que você quer mandar.');
+        return;
+      }
+      priceValue = Number(customAmount).toFixed(2);
+    }
+
     const pixLink = `https://linkspix.app/tonhao/${priceValue}`;
 
     try {

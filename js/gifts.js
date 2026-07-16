@@ -5,7 +5,7 @@ const giftsData = {
     key: '11963987543'
   },
   gifts: [
-    { id: 1, title: 'Café especial para dois', emoji: '☕', price: 180 },
+    { id: 1, title: 'Café especial para dois', emoji: '☕', price: 0.10 },
     { id: 2, title: 'Sobremesa especial em um café charmoso', emoji: '🍨', price: 200 },
     { id: 3, title: 'Jantar romântico', emoji: '🍽️', price: 590 },
     { id: 4, title: 'Vinho importado', emoji: '🍷', price: 350 },
@@ -68,7 +68,7 @@ function closeGiftModal() {
   document.getElementById('gift-recipient-name').value = '';
 }
 
-document.addEventListener('click', (event) => {
+document.addEventListener('click', async (event) => {
   const button = event.target.closest('.gift-button');
   if (button) {
     openGiftModal(button.dataset.giftTitle);
@@ -81,12 +81,32 @@ document.addEventListener('click', (event) => {
   if (event.target.id === 'gift-submit-button') {
     const recipientName = document.getElementById('gift-recipient-name').value.trim();
     if (!recipientName) {
-      alert('Por favor, informe o nome da pessoa.');
+      alert('Por favor, informe o seu nome.');
       return;
     }
 
-    alert(`Presente selecionado: ${currentGiftTitle}\nEnviado para: ${recipientName}`);
-    closeGiftModal();
+    const selectedGift = giftsData.gifts.find((gift) => gift.title === currentGiftTitle);
+    const priceValue = selectedGift ? selectedGift.price.toFixed(2) : '0.00';
+    const pixLink = `https://linkspix.app/tonhao/${priceValue}`;
+
+    try {
+      const formData = new FormData();
+      formData.append('Nome', recipientName);
+      formData.append('Presente', currentGiftTitle);
+      formData.append('_captcha', 'false');
+      formData.append('_subject', 'Presente selecionado');
+      formData.append('_template', 'table');
+
+      await fetch('https://formsubmit.co/sousa.mg@hotmail.com', {
+        method: 'POST',
+        body: formData
+      });
+
+      closeGiftModal();
+      window.location.href = pixLink;
+    } catch (error) {
+      alert('Não foi possível enviar o presente no momento. Tente novamente.');
+    }
   }
 });
 

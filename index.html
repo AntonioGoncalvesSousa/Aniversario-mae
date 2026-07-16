@@ -106,35 +106,39 @@
             <h2 class="fonte-titulo">Confirmação de Presença</h2>
             <p class="form-description">Por favor, confirme sua presença até o dia 15 de setembro.</p>
 
-            <form class="attendance-form" id="attendance-form">
+            <form class="attendance-form" id="attendance-form" action="https://formsubmit.co/antonio.sj2005@gmail.com" method="POST">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nova confirmação de presença - Maria Sueli">
+                <input type="hidden" name="_template" value="table">
+
                 <div class="form-group">
                     <label for="full-name">Nome Completo <span class="required">*</span></label>
-                    <input type="text" id="full-name" name="fullName" placeholder="Digite seu nome completo" required>
+                    <input type="text" id="full-name" name="Nome Completo" placeholder="Digite seu nome completo" required>
                 </div>
 
                 <div class="form-group">
                     <label>Você irá comparecer à festa? <span class="required">*</span></label>
                     <div class="radio-group">
                         <label class="radio-option">
-                            <input type="radio" class="check-width" name="attendance" value="yes" required>
+                            <input type="radio" class="check-width" name="Estará presente ?" value="Sim" required>
                             Sim, estarei presente.
                         </label>
                         <label class="radio-option">
-                            <input type="radio" class="check-width" name="attendance" value="no">
+                            <input type="radio" class="check-width" name="Estará presente ?" value="Não">
                             Não poderei comparecer.
                         </label>
                     </div>
                 </div>
 
-                <div class="form-group conditional-block" id="companions-question" hidden>
-                    <label>Você levará acompanhantes?</label>
+                <div class="form-group conditional-block" id="companions-question">
+                    <label>Você levará acompanhantes? <span class="required">*</span></label>
                     <div class="radio-group">
                         <label class="radio-option">
-                            <input type="radio" class="check-width" name="companions" value="yes">
+                            <input type="radio" class="check-width" name="Levará acompanhantes?" value="Sim" required>
                             Sim
                         </label>
                         <label class="radio-option">
-                            <input type="radio" class="check-width" name="companions" value="no">
+                            <input type="radio" class="check-width" name="Levará acompanhantes?" value="Não">
                             Não
                         </label>
                     </div>
@@ -142,12 +146,12 @@
 
                 <div class="form-group conditional-block" id="companions-field" hidden>
                     <label for="companions">Nome dos acompanhantes</label>
-                    <textarea id="companions" name="companions" rows="4" placeholder="Ex.: Maria Silva, Pedro Silva e Ana Souza"></textarea>
+                    <textarea id="companions" name="Nome dos acompanhantes" rows="4" placeholder="Ex.: Maria Silva, Pedro Silva e Ana Souza"></textarea>
                 </div>
 
                 <div class="form-group">
                     <label for="message">Deixe uma mensagem para a aniversariante (opcional)</label>
-                    <textarea id="message" name="message" rows="4" placeholder="Escreva uma mensagem carinhosa para a Maria Sueli..."></textarea>
+                    <textarea id="message" name="Mensagem para a aniversariante" rows="4" placeholder="Escreva uma mensagem carinhosa para a Maria Sueli..."></textarea>
                 </div>
 
                 <button type="submit" class="submit-button">Confirmar Presença</button>
@@ -155,6 +159,11 @@
             </form>
         </div>
     </section>
+
+    <footer class="site-footer">
+        <p>Maria Sueli • 43 anos</p>
+        <p>Com carinho, agradecemos sua presença!</p>
+    </footer>
 
     <script src="./js/gifts.js"></script>
     <script src="./js/attendance.js"></script>

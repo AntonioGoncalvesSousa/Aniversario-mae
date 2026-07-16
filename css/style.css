@@ -14,6 +14,26 @@
 
 }
 
+body {
+    background-image: url('../assets/images/casal2.JPG');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+    /* Deixe a imagem fixa na tela */
+    background-attachment: fixed;
+}
+
+.back {
+    background-color: var(--cor-white);
+    width: 100%;
+}
+
+.space {
+    height: 30vh;
+}
+
 * {
     margin: 0;
     padding: 0;

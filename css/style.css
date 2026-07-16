@@ -258,6 +258,83 @@ h1 {
     font-weight: 700;
 }
 
+.gift-button {
+    margin-top: 14px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 14px;
+    background-color: var(--cor-blue);
+    color: var(--cor-white);
+    font-family: var(--font-text);
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gift-button:hover {
+    background-color: #244a63;
+}
+
+.gift-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.gift-modal.hidden {
+    display: none;
+}
+
+.gift-modal-content {
+    background: var(--cor-white);
+    border-radius: 16px;
+    padding: 24px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.gift-modal-content h3 {
+    font-family: var(--font-text);
+    color: var(--cor-blue);
+}
+
+.gift-modal-content p {
+    font-family: var(--font-text);
+    color: var(--cor-gray);
+}
+
+.gift-modal-content input {
+    border: 1px solid rgba(62, 62, 62, 0.25);
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: var(--font-text);
+    font-size: 1rem;
+}
+
+.gift-modal-content button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 14px;
+    background-color: var(--cor-blue);
+    color: var(--cor-white);
+    font-family: var(--font-text);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.gift-close-button {
+    background-color: #c0392b !important;
+}
+
 .site-footer {
     background-color: var(--cor-blue);
     color: var(--cor-white);

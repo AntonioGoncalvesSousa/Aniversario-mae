@@ -32,8 +32,66 @@ if (container) {
       <div class="gift-emoji">${gift.emoji}</div>
       <h3>${gift.title}</h3>
       <p class="gift-price">R$ ${gift.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+      <button class="gift-button" type="button" data-gift-title="${gift.title}">
+        Gerar código PIX
+      </button>
     `;
 
     container.appendChild(card);
   });
 }
+
+const modal = document.createElement('div');
+modal.className = 'gift-modal hidden';
+modal.innerHTML = `
+  <div class="gift-modal-content">
+    <h3>Enviar presente</h3>
+    <p>Digite o nome da pessoa para confirmar o presente.</p>
+    <input type="text" id="gift-recipient-name" placeholder="Seu nome" />
+    <button type="button" id="gift-submit-button">Enviar presente</button>
+    <button type="button" id="gift-close-button" class="gift-close-button">Cancelar</button>
+  </div>
+`;
+
+document.body.appendChild(modal);
+
+let currentGiftTitle = '';
+
+function openGiftModal(giftTitle) {
+  currentGiftTitle = giftTitle;
+  modal.classList.remove('hidden');
+  document.getElementById('gift-recipient-name').focus();
+}
+
+function closeGiftModal() {
+  modal.classList.add('hidden');
+  document.getElementById('gift-recipient-name').value = '';
+}
+
+document.addEventListener('click', (event) => {
+  const button = event.target.closest('.gift-button');
+  if (button) {
+    openGiftModal(button.dataset.giftTitle);
+  }
+
+  if (event.target.id === 'gift-close-button') {
+    closeGiftModal();
+  }
+
+  if (event.target.id === 'gift-submit-button') {
+    const recipientName = document.getElementById('gift-recipient-name').value.trim();
+    if (!recipientName) {
+      alert('Por favor, informe o nome da pessoa.');
+      return;
+    }
+
+    alert(`Presente selecionado: ${currentGiftTitle}\nEnviado para: ${recipientName}`);
+    closeGiftModal();
+  }
+});
+
+modal.addEventListener('click', (event) => {
+  if (event.target === modal) {
+    closeGiftModal();
+  }
+});

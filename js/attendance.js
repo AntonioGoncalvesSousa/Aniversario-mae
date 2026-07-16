@@ -9,10 +9,10 @@ if (form) {
       return;
     }
 
-    const attendanceAnswer = form.querySelector('input[name="Estará presente ?"]:checked');
+    const attendanceAnswer = form.querySelector('input[name="Presença"]:checked');
     const alertMessage = attendanceAnswer && attendanceAnswer.value === 'Sim'
-      ? 'Presença confirmada'
-      : 'Presença não confirmada';
+      ? 'Presença confirmada' 
+      : 'Obrigada pela resposta!';
 
     try {
       const response = await fetch(form.action, {

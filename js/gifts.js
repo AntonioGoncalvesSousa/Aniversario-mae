@@ -18,7 +18,7 @@ const giftsData = {
     { id: 11, title: 'Spa para casal', emoji: '💆', price: 650 },
     { id: 12, title: 'Jantar de comemoração das Bodas de Prata', emoji: '🍾', price: 700 },
     { id: 13, title: 'Contribuição livre', emoji: '🎁', price: 0 }
-  ];
+  ]
 };
 
 const container = document.getElementById('gift-cards');

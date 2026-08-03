@@ -21,7 +21,7 @@ gifts: [
     { id: 14, title: 'Passeio especial', image: 'assets/experiences/14.jpg', price: 450 },
     { id: 15, title: 'Ingresso para atração turística', image: 'assets/experiences/15.jpg', price: 300 },
     { id: 16, title: 'Ensaio fotográfico durante a viagem', image: 'assets/experiences/16.jpg', price: 800 },
-    { id: 17, title: 'Contribuição especial', image: 'assets/experiences/17.jpg', price: 0 }
+    { id: 17, title: 'Contribuição especial', image: 'assets/experiences/17.jpg', price: "Caso prefira, você também pode fazer uma contribuição com qualquer outro valor." }
   ]
 };
 
@@ -32,10 +32,14 @@ if (container) {
     const card = document.createElement('article');
     card.className = 'gift-card';
 
+    const priceText = gift.title === 'Contribuição especial'
+      ? gift.price
+      : `R$ ${gift.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`;
+
     card.innerHTML = `
       <img src="${gift.image}" alt="${gift.title}" class="gift-image" />
       <h3>${gift.title}</h3>
-      <p class="gift-price">R$ ${gift.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
+      <p class="gift-price">${priceText}</p>
       <button class="gift-button" type="button" data-gift-title="${gift.title}">
         Gerar código PIX
       </button>
@@ -105,7 +109,7 @@ document.addEventListener('click', async (event) => {
     }
 
     const selectedGift = giftsData.gifts.find((gift) => gift.title === currentGiftTitle);
-    let priceValue = selectedGift ? selectedGift.price.toFixed(2) : '0.00';
+    let priceValue = selectedGift ? selectedGift.price : '0.00';
 
     if (currentGiftTitle === 'Contribuição especial') {
       const customAmount = document.getElementById('gift-amount').value.trim();

@@ -5,23 +5,23 @@ const giftsData = {
     key: '11963987543'
   },
 gifts: [
-    { id: 1, title: 'Café especial de boas vindas no hotel', emoji: '☕', price: 300 },
-    { id: 2, title: 'Sobremesa especial em um café charmoso', emoji: '🍨', price: 190 },
-    { id: 3, title: 'Jantar romântico', emoji: '🍽️', price: 630 },
-    { id: 4, title: 'Vinho importado', emoji: '🍷', price: 350 },
-    { id: 5, title: 'Tábua de frios especial', emoji: '🧀', price: 280 },
-    { id: 6, title: 'Transporte para um passeio especial', emoji: '🚕', price: 220 },
-    { id: 7, title: 'Brinde comemorativo das Bodas de Prata', emoji: '🥂', price: 380 },
-    { id: 8, title: 'Spa para casal', emoji: '💆', price: 750 },
-    { id: 9, title: 'Jantar de comemoração das Bodas de Prata', emoji: '🍾', price: 1200 },
-    { id: 10, title: 'Cota da passagem aérea', emoji: '✈️', price: 300 },
-    { id: 11, title: 'Cota da passagem aérea', emoji: '✈️', price: 500 },
-    { id: 12, title: 'Uma diária de hotel', emoji: '✈️', price: 450 },
-    { id: 13, title: 'Upgrade de hospedagem', emoji: '✈️', price: 800 },
-    { id: 14, title: 'Passeio especial', emoji: '✈️', price: 450 },
-    { id: 15, title: 'Ingresso para atração turística', emoji: '✈️', price: 300 },
-    { id: 16, title: 'Ensaio fotográfico durante a viagem', emoji: '✈️', price: 800 },
-    { id: 17, title: 'Presente livre', emoji: '🎁', price: 0 }
+    { id: 1, title: 'Café especial de boas vindas no hotel', image: 'assets/experiences/1.jpg', price: 300 },
+    { id: 2, title: 'Sobremesa especial em um café charmoso', image: 'assets/experiences/2.jpg', price: 190 },
+    { id: 3, title: 'Jantar romântico', image: 'assets/experiences/3.jpg', price: 630 },
+    { id: 4, title: 'Vinho importado', image: 'assets/experiences/4.jpg', price: 350 },
+    { id: 5, title: 'Tábua de frios especial', image: 'assets/experiences/5.jpg', price: 280 },
+    { id: 6, title: 'Transporte para um passeio especial', image: 'assets/experiences/6.jpg', price: 220 },
+    { id: 7, title: 'Brinde comemorativo das Bodas de Prata', image: 'assets/experiences/7.jpg', price: 380 },
+    { id: 8, title: 'Spa para casal', image: 'assets/experiences/8.jpg', price: 750 },
+    { id: 9, title: 'Jantar de comemoração das Bodas de Prata', image: 'assets/experiences/9.jpg', price: 1200 },
+    { id: 10, title: 'Cota da passagem aérea', image: 'assets/experiences/10.jpg', price: 300 },
+    { id: 11, title: 'Cota da passagem aérea', image: 'assets/experiences/11.jpg', price: 500 },
+    { id: 12, title: 'Uma diária de hotel', image: 'assets/experiences/12.jpg', price: 450 },
+    { id: 13, title: 'Upgrade de hospedagem', image: 'assets/experiences/13.jpg', price: 800 },
+    { id: 14, title: 'Passeio especial', image: 'assets/experiences/14.jpg', price: 450 },
+    { id: 15, title: 'Ingresso para atração turística', image: 'assets/experiences/15.jpg', price: 300 },
+    { id: 16, title: 'Ensaio fotográfico durante a viagem', image: 'assets/experiences/16.jpg', price: 800 },
+    { id: 17, title: 'Contribuição especial', image: 'assets/experiences/17.jpg', price: 0 }
   ]
 };
 
@@ -33,7 +33,7 @@ if (container) {
     card.className = 'gift-card';
 
     card.innerHTML = `
-      <div class="gift-emoji">${gift.emoji}</div>
+      <img src="${gift.image}" alt="${gift.title}" class="gift-image" />
       <h3>${gift.title}</h3>
       <p class="gift-price">R$ ${gift.price.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}</p>
       <button class="gift-button" type="button" data-gift-title="${gift.title}">
@@ -71,7 +71,7 @@ function openGiftModal(giftTitle) {
 
   const amountGroup = document.getElementById('gift-amount-group');
   const amountInput = document.getElementById('gift-amount');
-  const isContribution = giftTitle === 'Contribuição livre';
+  const isContribution = giftTitle === 'Contribuição especial';
 
   amountGroup.hidden = !isContribution;
   if (!isContribution) {
@@ -107,7 +107,7 @@ document.addEventListener('click', async (event) => {
     const selectedGift = giftsData.gifts.find((gift) => gift.title === currentGiftTitle);
     let priceValue = selectedGift ? selectedGift.price.toFixed(2) : '0.00';
 
-    if (currentGiftTitle === 'Contribuição livre') {
+    if (currentGiftTitle === 'Contribuição especial') {
       const customAmount = document.getElementById('gift-amount').value.trim();
       if (!customAmount) {
         alert('Por favor, informe o valor que você quer mandar.');

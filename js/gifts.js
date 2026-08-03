@@ -21,8 +21,7 @@ gifts: [
     { id: 14, title: 'Passeio especial', emoji: '✈️', price: 450 },
     { id: 15, title: 'Ingresso para atração turística', emoji: '✈️', price: 300 },
     { id: 16, title: 'Ensaio fotográfico durante a viagem', emoji: '✈️', price: 800 },
-    { id: 17, title: 'Massagem relaxante', emoji: '✈️', price: 400 },
-    { id: 18, title: 'Presente livre', emoji: '🎁', price: 0 }
+    { id: 17, title: 'Presente livre', emoji: '🎁', price: 0 }
   ]
 };
 

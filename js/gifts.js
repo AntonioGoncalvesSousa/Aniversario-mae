@@ -4,20 +4,25 @@ const giftsData = {
     city: 'São Paulo',
     key: '11963987543'
   },
-  gifts: [
-    { id: 1, title: 'Café especial para dois', emoji: '☕', price: 0.10 },
-    { id: 2, title: 'Sobremesa especial em um café charmoso', emoji: '🍨', price: 200 },
-    { id: 3, title: 'Jantar romântico', emoji: '🍽️', price: 590 },
+gifts: [
+    { id: 1, title: 'Café especial de boas vindas no hotel', emoji: '☕', price: 300 },
+    { id: 2, title: 'Sobremesa especial em um café charmoso', emoji: '🍨', price: 190 },
+    { id: 3, title: 'Jantar romântico', emoji: '🍽️', price: 630 },
     { id: 4, title: 'Vinho importado', emoji: '🍷', price: 350 },
-    { id: 5, title: 'Tábua de frios especial', emoji: '🧀', price: 180 },
-    { id: 6, title: 'Passeio ao pôr do sol', emoji: '🌅', price: 250 },
-    { id: 7, title: 'Transporte para um passeio especial', emoji: '🚕', price: 220 },
-    { id: 8, title: 'Brinde comemorativo das Bodas de Prata', emoji: '🥂', price: 280 },
-    { id: 9, title: 'Drinks especiais para o casal', emoji: '🍸', price: 240 },
-    { id: 10, title: 'Café da manhã especial no hotel', emoji: '🍰', price: 320 },
-    { id: 11, title: 'Spa para casal', emoji: '💆', price: 650 },
-    { id: 12, title: 'Jantar de comemoração das Bodas de Prata', emoji: '🍾', price: 700 },
-    { id: 13, title: 'Presente livre', emoji: '🎁', price: 0 }
+    { id: 5, title: 'Tábua de frios especial', emoji: '🧀', price: 280 },
+    { id: 6, title: 'Transporte para um passeio especial', emoji: '🚕', price: 220 },
+    { id: 7, title: 'Brinde comemorativo das Bodas de Prata', emoji: '🥂', price: 380 },
+    { id: 8, title: 'Spa para casal', emoji: '💆', price: 750 },
+    { id: 9, title: 'Jantar de comemoração das Bodas de Prata', emoji: '🍾', price: 1200 },
+    { id: 10, title: 'Cota da passagem aérea', emoji: '✈️', price: 300 },
+    { id: 11, title: 'Cota da passagem aérea', emoji: '✈️', price: 500 },
+    { id: 12, title: 'Uma diária de hotel', emoji: '✈️', price: 450 },
+    { id: 13, title: 'Upgrade de hospedagem', emoji: '✈️', price: 800 },
+    { id: 14, title: 'Passeio especial', emoji: '✈️', price: 450 },
+    { id: 15, title: 'Ingresso para atração turística', emoji: '✈️', price: 300 },
+    { id: 16, title: 'Ensaio fotográfico durante a viagem', emoji: '✈️', price: 800 },
+    { id: 17, title: 'Massagem relaxante', emoji: '✈️', price: 400 },
+    { id: 18, title: 'Presente livre', emoji: '🎁', price: 0 }
   ]
 };
 

@@ -96,6 +96,19 @@ h1 {
     padding-top: 70px;
 }
 
+.h2-info {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 13px;
+}
+
+.fixed-text-top {
+    margin-bottom: 20px;
+}
+.fixed-text-bottom {
+    margin-top: 20px;
+}
+
 .quadro {
     width: 93%;
     background-color: var(--cor-white);

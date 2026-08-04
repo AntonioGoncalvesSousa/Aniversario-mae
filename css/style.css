@@ -88,6 +88,50 @@ h1 {
     align-items: center;
 }
 
+.contador {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 8px;
+    width: 105%;
+}
+
+.contador-item {
+    min-width: 84px;
+    padding: 12px 10px;
+    border-radius: 12px;
+    background-color: rgba(47, 93, 126, 0.08);
+    border: 1px solid rgba(47, 93, 126, 0.2);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.contador-number {
+    display: block;
+    font-family: var(--font-text);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--cor-blue);
+}
+
+.contador-label {
+    display: block;
+    font-size: 0.75rem;
+    font-family: var(--font-text);
+    color: var(--cor-gray);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.contador-final {
+    font-family: var(--font-text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--cor-blue);
+    margin-top: 6px;
+}
+
 .hero-img {
     width: 100%;
     /* background-color: var(--cor-blue); */

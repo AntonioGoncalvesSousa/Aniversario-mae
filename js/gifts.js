@@ -54,7 +54,7 @@ modal.className = 'gift-modal hidden';
 modal.innerHTML = `
   <div class="gift-modal-content">
     <h3>Enviar presente</h3>
-    <p>Digite o nome da pessoa para confirmar o presente.</p>
+    <p>Digite o seu nome para confirmar o presente.</p>
     <input type="text" id="gift-recipient-name" placeholder="Seu nome" />
     <div id="gift-amount-group" class="gift-amount-group" hidden>
       <label for="gift-amount">Quanto você quer mandar?</label>

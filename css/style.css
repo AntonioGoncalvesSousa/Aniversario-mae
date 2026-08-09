@@ -59,7 +59,7 @@ textarea {
 }
 
 .topbar {
-    display: flex;14px
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 22px 38px;
